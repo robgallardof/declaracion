@@ -1,0 +1,79 @@
+{
+  "_nota": "Valores fiscales del ejercicio. Solo investigador-fiscal los actualiza, con fuente oficial y fecha. verificado=false => no usar sin verificar.",
+  "ejercicio": 2026,
+  "resico_pf_tasas_mensuales": {
+    "verificado": true,
+    "fuente": "LISR art. 113-E, tabla mensual (tramos y tope 3,500,000) y art. 113-J (retencion 1.25% por personas morales). Texto vigente Camara de Diputados, ultima reforma DOF 01-04-2024: https://www.diputados.gob.mx/LeyesBiblio/pdf/LISR.pdf",
+    "verificado_el": "2026-10-14",
+    "tramos": [
+      {
+        "hasta": 25000.0,
+        "tasa": 0.01
+      },
+      {
+        "hasta": 50000.0,
+        "tasa": 0.011
+      },
+      {
+        "hasta": 83333.33,
+        "tasa": 0.015
+      },
+      {
+        "hasta": 208333.33,
+        "tasa": 0.02
+      },
+      {
+        "hasta": 3500000.0,
+        "tasa": 0.025
+      }
+    ],
+    "tope_anual": 3500000.0,
+    "retencion_isr_pm": 0.0125
+  },
+  "iva": {
+    "verificado": true,
+    "fuente": "LIVA art. 1o, tercer parrafo: tasa del 16%. Texto vigente Camara de Diputados, ultima reforma DOF 12-11-2021: https://www.diputados.gob.mx/LeyesBiblio/pdf/LIVA.pdf",
+    "verificado_el": "2026-10-14",
+    "general": 0.16
+  },
+  "iva_otros": {
+    "verificado": false,
+    "fuente": "Pendiente: frontera 8% depende del Decreto de estimulos fiscales region fronteriza (DOF) vigente en 2026; retencion 2/3 depende del RLIVA art. 3. No verificados porque no se usan en la mensual RESICO de este contribuyente.",
+    "frontera": 0.08,
+    "retencion_pm_fraccion": 0.6667
+  },
+  "recargos_tasa_mensual": {
+    "verificado": true,
+    "fuente": "LIF 2026 art. 11 fr. I (prorroga 1.38% mensual; DOF 07-11-2025, https://www.diputados.gob.mx/LeyesBiblio/pdf/LIF_2026.pdf) + CFF art. 21 (mora = tasa LIF incrementada en 50%, redondeo a la centesima; https://www.diputados.gob.mx/LeyesBiblio/pdf/CFF.pdf, ultima reforma DOF 09-04-2026). 1.38 x 1.5 = 2.07",
+    "verificado_el": "2026-10-14",
+    "valor": 0.0207,
+    "_nota": "valor = tasa mensual de recargos por mora (pago extemporaneo), la que usa calc.py recargos.",
+    "prorroga": 0.0138,
+    "plazos": {
+      "hasta_12_meses": 0.0142,
+      "de_12_a_24_meses": 0.0163,
+      "mas_de_24_o_diferido": 0.0197
+    }
+  },
+  "uma": {
+    "verificado": true,
+    "fuente": "INEGI, 'Unidad de medida y actualizacion', DOF 09-01-2026: https://dof.gob.mx/nota_detalle.php?codigo=5778072&fecha=09/01/2026. Vigente del 01-02-2026 al 31-01-2027 (en enero 2026 rige la UMA 2025: 113.14 diaria).",
+    "verificado_el": "2026-10-14",
+    "diaria": 117.31,
+    "mensual": 3566.22,
+    "anual": 42794.64
+  },
+  "inpc": {
+    "_nota": "clave AAAA-MM -> valor; fuente INEGI/DOF",
+    "valores": {}
+  },
+  "vencimientos_mensuales": {
+    "verificado": true,
+    "fuente": "LISR art. 113-E (dia 17 del mes siguiente); CFF art. 12 (si vence en dia inhabil se corre al siguiente habil); Decreto que compila diversos beneficios fiscales, art. 5.1, DOF 26-12-2013 (https://dof.gob.mx/nota_detalle.php?codigo=5328028&fecha=26/12/2013): sexto digito numerico del RFC 7 u 8 = dia 17 mas 4 dias habiles. Las fechas de abajo son las que mostro el formulario oficial para un RFC con sexto digito numerico 8.",
+    "verificado_el": "2026-10-14",
+    "_nota": "Fechas confirmadas en el formulario para RFC con sexto digito numerico 8 (dia 17 + 4 dias habiles). Manda la fecha que muestre el formulario.",
+    "fechas": {
+      "2026-09": "2026-10-23"
+    }
+  }
+}

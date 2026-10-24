@@ -1,0 +1,26 @@
+# LISTA BLANCA: todo se ignora salvo lo de abajo. Los datos personales (años, clientes, perfil) nunca se versionan.
+/*
+!/.gitignore
+!/.gitattributes
+!/.githooks/
+!/.github/
+!/.agents/
+!/config/
+!/datos/
+!/mcp/
+!/scripts/
+!/AGENTS.md
+!/CLAUDE.md
+!/GEMINI.md
+!/README.md
+
+# dentro de las carpetas permitidas
+/config/*
+!/config/mcp.servers.json
+!/config/contribuyente.example.yaml
+/.agents/mcp_config.json
+__pycache__/
+.venv/
+.pytest_cache/
+*.pyc
+*.bak

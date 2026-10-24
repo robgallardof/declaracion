@@ -1,0 +1,11 @@
+{
+  "$comment": "Fuente única de servidores MCP. python scripts/sync.py genera la config de cada cliente.",
+  "servers": {
+    "declara-mx": {
+      "description": "Carpetas por mes, CFDI, cálculos RESICO/IVA/recargos, vencimientos, resumen de acuses",
+      "command": "uv",
+      "args": ["run", "--quiet", "--no-sync", "--directory", "{ROOT}/mcp/declara-mx", "declara-mx-mcp"],
+      "env": {"DECLARA_ROOT": "{ROOT}", "PYTHONIOENCODING": "utf-8"}
+    }
+  }
+}

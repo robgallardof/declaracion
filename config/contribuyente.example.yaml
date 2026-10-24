@@ -1,0 +1,13 @@
+# Copia este archivo a config/contribuyente.yaml (git lo ignora) y llénalo con tus datos.
+nombre: ""
+rfc: ""            # 13 caracteres para persona física
+curp: ""
+regimenes:
+  - clave: "626"
+    nombre: RESICO PF
+    periodicidad: mensual (ISR + IVA)
+    actividad: "Describe de dónde vienen tus ingresos (clientes, plataformas, sueldos...)"
+efirma:
+  carpeta: ""       # dónde están tus .cer y .key (el agente NUNCA lee la contraseña)
+  vence: ""
+notas: []
