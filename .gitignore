@@ -13,6 +13,10 @@
 !/CLAUDE.md
 !/GEMINI.md
 !/README.md
+# imágenes del README (solo SVG de diseño, sin datos personales)
+!/assets/
+/assets/*
+!/assets/readme/
 
 # dentro de las carpetas permitidas
 /config/*

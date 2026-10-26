@@ -1,10 +1,11 @@
 <div align="center">
 
-# 🧾 declaracion
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/readme/banner-es-dark.svg">
+  <img src="assets/readme/banner-es-light.svg" alt="declaracion — Tus impuestos en México, dentro de tu agente de IA" width="100%">
+</picture>
 
-**Tu asistente de impuestos personales en México, dentro de tu agente de IA.**<br>
-Ordena tu contabilidad por mes, lee tus facturas y comprobantes, calcula ISR e IVA,<br>
-te avisa de vencimientos y te acompaña paso a paso al presentar tu declaración.
+<br/>
 
 [![pruebas](https://github.com/robgallardof/declaracion/actions/workflows/tests.yml/badge.svg)](https://github.com/robgallardof/declaracion/actions/workflows/tests.yml)
 ![python](https://img.shields.io/badge/python-3.12-3776AB?logo=python&logoColor=white)
@@ -14,12 +15,24 @@ te avisa de vencimientos y te acompaña paso a paso al presentar tu declaración
 
 </div>
 
----
+<p align="center">
+<a href="#-qué-hace"><img src="https://img.shields.io/badge/Qu%C3%A9%20hace-6D28D9?style=for-the-badge" alt="Qué hace" /></a>
+<a href="#-tu-información-es-tuya"><img src="https://img.shields.io/badge/Tu%20informaci%C3%B3n%20es%20tuya-5B21B6?style=for-the-badge" alt="Tu información es tuya" /></a>
+<a href="#-funciona-con-cualquier-agente"><img src="https://img.shields.io/badge/Funciona%20con%20cualquier%20agente-4F46E5?style=for-the-badge" alt="Funciona con cualquier agente" /></a>
+<a href="#-empezar"><img src="https://img.shields.io/badge/Empezar-4338CA?style=for-the-badge" alt="Empezar" /></a>
+<a href="#️-herramientas-mcp"><img src="https://img.shields.io/badge/Herramientas%20MCP-2563EB?style=for-the-badge" alt="Herramientas MCP" /></a>
+<a href="#-roles-y-skills"><img src="https://img.shields.io/badge/Roles%20y%20skills-0284C7?style=for-the-badge" alt="Roles y skills" /></a>
+<a href="#-estructura"><img src="https://img.shields.io/badge/Estructura-0EA5E9?style=for-the-badge" alt="Estructura" /></a>
+<a href="#-desarrollo"><img src="https://img.shields.io/badge/Desarrollo-0891B2?style=for-the-badge" alt="Desarrollo" /></a>
+</p>
+
+<p align="center"><img src="assets/readme/divider.svg" alt="" width="80%" /></p>
 
 > **Proyecto independiente.** No está afiliado, avalado ni relacionado con ninguna autoridad fiscal ni dependencia de
 > gobierno. Informa y calcula; **no es asesoría fiscal**. Las decisiones y el envío final son siempre tuyos.
 
-## ✨ Qué hace
+<a id="-qué-hace"></a>
+<p align="center"><img src="assets/readme/sections/es-01.svg" alt="01 · Qué hace" width="100%" /></p>
 
 | | |
 |---|---|
@@ -32,7 +45,8 @@ te avisa de vencimientos y te acompaña paso a paso al presentar tu declaración
 | 🧾 **Facturación** | Arma el CFDI de ingreso, lo revisa contra las reglas 4.0 y lo guarda con nombre claro. |
 | 📆 **Anual** | Junta el año (sueldos + RESICO, deducciones personales, retenciones) para la declaración de abril. |
 
-## 🔒 Tu información es tuya
+<a id="-tu-información-es-tuya"></a>
+<p align="center"><img src="assets/readme/sections/es-02.svg" alt="02 · Tu información es tuya" width="100%" /></p>
 
 - Tus datos (RFC, CURP, e.firma, comprobantes, acuses, montos) viven **solo en tu computadora**.
 - El repositorio usa un `.gitignore` de **lista blanca**: los años, `clientes.json` y `config/contribuyente.yaml`
@@ -40,7 +54,8 @@ te avisa de vencimientos y te acompaña paso a paso al presentar tu declaración
 - Una prueba automática **rechaza cualquier RFC o CURP personal** en archivos versionados.
 - El agente **nunca** lee ni guarda la contraseña de tu e.firma. El inicio de sesión y la firma los haces tú.
 
-## 🧩 Funciona con cualquier agente
+<a id="-funciona-con-cualquier-agente"></a>
+<p align="center"><img src="assets/readme/sections/es-03.svg" alt="03 · Funciona con cualquier agente" width="100%" /></p>
 
 Es un **servidor MCP** estándar (`declara-mx`). Además de las herramientas, publica cada skill como recurso MCP
 (`skill://…`) y cada rol como prompt, así cualquier cliente recibe el manual completo.
@@ -52,7 +67,8 @@ Es un **servidor MCP** estándar (`declara-mx`). Además de las herramientas, pu
 | Antigravity | `.agents/mcp_config.json` / `~/.gemini/antigravity/mcp_config.json` |
 | Cursor · VS Code · Gemini CLI · Windsurf · Claude Desktop | configs generadas o el instalador |
 
-## 🚀 Empezar
+<a id="-empezar"></a>
+<p align="center"><img src="assets/readme/sections/es-04.svg" alt="04 · Empezar" width="100%" /></p>
 
 Requisitos: [uv](https://docs.astral.sh/uv/) y Python 3.12 (uv lo instala).
 
@@ -71,7 +87,8 @@ Luego, háblale a tu agente:
 > *"¿Qué meses me faltan de 2026?"* · *"Declara septiembre"* · *"Declara agosto en 0"* · *"¿Cuánto IVA lleva este depósito?"* ·
 > *"Ya se venció mi línea de captura de mayo"* · *"Factura a mi cliente lo de octubre"* · *"Prepara mi anual"*
 
-## 🛠️ Herramientas MCP
+<a id="️-herramientas-mcp"></a>
+<p align="center"><img src="assets/readme/sections/es-05.svg" alt="05 · Herramientas MCP" width="100%" /></p>
 
 | Herramienta | Qué hace |
 |---|---|
@@ -88,7 +105,8 @@ Luego, háblale a tu agente:
 
 Sin agente: `cd mcp/declara-mx && uv run declara --help` (por ejemplo `uv run declara estado 2026`).
 
-## 👥 Roles y skills
+<a id="-roles-y-skills"></a>
+<p align="center"><img src="assets/readme/sections/es-06.svg" alt="06 · Roles y skills" width="100%" /></p>
 
 **Roles:** `extractor-comprobantes` → `validador-cfdi` → `contador-mx` → `auditor-fiscal` para cada mes;
 `preparador-anual` en abril; `investigador-fiscal` mantiene los valores oficiales al día (DOF, INEGI, Banxico).
@@ -103,7 +121,8 @@ CFDI 4.0) · `portal-fiscal` (manual del portal con e.firma).
 4. No inventa montos ni hace cuentas a mano.
 5. Siempre te entrega la línea de captura (número, importe y vigencia). El pago lo haces tú.
 
-## 📁 Estructura
+<a id="-estructura"></a>
+<p align="center"><img src="assets/readme/sections/es-07.svg" alt="07 · Estructura" width="100%" /></p>
 
 ```
 2026/                      ← privado
@@ -117,7 +136,8 @@ mcp/declara-mx/            el servidor MCP + CLI
 scripts/                   bootstrap, sync, install-mcp
 ```
 
-## 🧪 Desarrollo
+<a id="-desarrollo"></a>
+<p align="center"><img src="assets/readme/sections/es-08.svg" alt="08 · Desarrollo" width="100%" /></p>
 
 ```bash
 cd mcp/declara-mx && uv run pytest      # 20 pruebas, incluida la de privacidad
@@ -129,3 +149,7 @@ Capas: `domain/` (reglas puras) → `services/` (archivos) → `app.py` → `ser
 Detalles para agentes en [`AGENTS.md`](AGENTS.md).
 
 <div align="center"><sub>Hecho en México 🇲🇽 para que declarar deje de ser un dolor de cabeza.</sub></div>
+
+<br/>
+
+<img src="assets/readme/footer-es.svg" alt="declaracion" width="100%" />
