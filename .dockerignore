@@ -1,0 +1,8 @@
+# Lista blanca: al contexto de construcción solo entra el código del MCP.
+# Nunca datos personales (años, comprobantes, config, clientes.json).
+**
+!mcp/declara-mx/pyproject.toml
+!mcp/declara-mx/uv.lock
+!mcp/declara-mx/src/
+!mcp/declara-mx/src/**
+mcp/declara-mx/src/**/__pycache__

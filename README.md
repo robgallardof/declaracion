@@ -9,7 +9,7 @@
 
 [![pruebas](https://github.com/robgallardof/declaracion/actions/workflows/tests.yml/badge.svg)](https://github.com/robgallardof/declaracion/actions/workflows/tests.yml)
 ![python](https://img.shields.io/badge/python-3.12-3776AB?logo=python&logoColor=white)
-![MCP](https://img.shields.io/badge/MCP-stdio-8A2BE2)
+![MCP](https://img.shields.io/badge/MCP-stdio%20%C2%B7%20HTTP-8A2BE2)
 ![México](https://img.shields.io/badge/solo-M%C3%A9xico%20🇲🇽-006847)
 ![privado](https://img.shields.io/badge/tus%20datos-se%20quedan%20en%20tu%20PC-2ea44f)
 
@@ -87,6 +87,51 @@ Luego, háblale a tu agente:
 > *"¿Qué meses me faltan de 2026?"* · *"Declara septiembre"* · *"Declara agosto en 0"* · *"¿Cuánto IVA lleva este depósito?"* ·
 > *"Ya se venció mi línea de captura de mayo"* · *"Factura a mi cliente lo de octubre"* · *"Prepara mi anual"*
 
+### Con Docker (opcional)
+
+Si prefieres no instalar Python ni uv, usa la imagen. Solo lleva el código del MCP: **tus datos nunca entran a la
+imagen**, se montan al ejecutarla (la carpeta del repo con tus años, `config/` y `datos/`).
+
+```bash
+docker build -t declara-mx:local .
+```
+
+**stdio** (lo lanza tu agente; sin puertos ni token). Configúralo en tu cliente MCP así:
+
+```json
+{
+  "mcpServers": {
+    "declara-mx": {
+      "command": "docker",
+      "args": ["run", "--rm", "-i", "-v", "C:/ruta/a/declaracion:/workspace", "declara-mx:local"]
+    }
+  }
+}
+```
+
+Usa `-i` y nunca `-t` (la terminal corrompe JSON-RPC). La CLI también va en la imagen:
+`docker run --rm -v "C:/ruta/a/declaracion:/workspace" --entrypoint declara declara-mx:local --help`.
+
+**HTTP con token** (Streamable HTTP en `http://127.0.0.1:<puerto>/mcp`, cabecera `Authorization: Bearer <token>`):
+
+```powershell
+$env:DECLARA_MCP_TOKEN = python -c "import secrets; print(secrets.token_hex(32))"
+$env:DECLARA_PORT = '8765'                       # opcional, 8080 por defecto
+docker compose up -d --build --wait
+```
+
+| Variable | Por defecto | Para qué |
+|---|---|---|
+| `DECLARA_MCP_TOKEN` | obligatoria | Token de al menos 32 caracteres para cada petición |
+| `DECLARA_PORT` | `8080` | Puerto en tu PC (dentro del contenedor siempre es 8080) |
+| `DECLARA_BIND_ADDRESS` | `127.0.0.1` | Interfaz donde se publica; solo tu PC por defecto |
+| `DECLARA_WORKSPACE` | `.` | Carpeta que se monta en `/workspace` |
+| `DECLARA_USER` | `10001:10001` | UID:GID; en Linux usa `"$(id -u):$(id -g)"` |
+
+Sin Docker, el mismo modo: `uv run declara-mx-mcp --http --listen 127.0.0.1:8765`. `/healthz` responde sin token;
+se rechazan navegadores (cabecera `Origin`) y hosts desconocidos. Es un servicio de un solo usuario: no lo publiques
+en internet sin un proxy con TLS (`--allow-host tu.dominio` para aceptar ese nombre).
+
 <a id="️-herramientas-mcp"></a>
 <p align="center"><img src="assets/readme/sections/es-05.svg" alt="05 · Herramientas MCP" width="100%" /></p>
 
@@ -133,14 +178,16 @@ config/contribuyente.yaml  ← privado (copia de contribuyente.example.yaml)
 datos/vigentes-2026.json   tasas, UMA, recargos, vencimientos (con fuente oficial)
 mcp/declara-mx/            el servidor MCP + CLI
 .agents/                   skills y roles portables
-scripts/                   bootstrap, sync, install-mcp
+scripts/                   bootstrap, sync, install-mcp, test_docker
+Dockerfile, compose.yaml   imagen opcional (stdio o HTTP con token)
 ```
 
 <a id="-desarrollo"></a>
 <p align="center"><img src="assets/readme/sections/es-08.svg" alt="08 · Desarrollo" width="100%" /></p>
 
 ```bash
-cd mcp/declara-mx && uv run pytest      # 20 pruebas, incluida la de privacidad
+cd mcp/declara-mx && uv run pytest      # 27 pruebas: privacidad, cálculos y MCP por HTTP real
+python scripts/test_docker.py           # imagen real: stdio, HTTP con token y sin datos personales
 python scripts/sync.py                  # tras editar .agents/ o config/
 python scripts/install-mcp.py --list    # clientes detectados
 ```

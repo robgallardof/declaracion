@@ -13,6 +13,9 @@
 !/CLAUDE.md
 !/GEMINI.md
 !/README.md
+!/Dockerfile
+!/.dockerignore
+!/compose.yaml
 # imágenes del README (solo SVG de diseño, sin datos personales)
 !/assets/
 /assets/*

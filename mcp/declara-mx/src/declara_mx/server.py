@@ -1,4 +1,4 @@
-"""Servidor MCP declara-mx (stdio). Herramientas + skills como recursos (skill://) + roles como prompts."""
+"""Servidor MCP declara-mx (stdio por defecto; HTTP con token opcional). Herramientas + skills como recursos (skill://) + roles como prompts."""
 
 from __future__ import annotations
 
@@ -113,8 +113,25 @@ def _registrar_skills_y_roles() -> None:
 _registrar_skills_y_roles()
 
 
-def main() -> None:
-    mcp.run()
+TOKEN_ENV = "DECLARA_MCP_TOKEN"
+
+
+def main(argv: list[str] | None = None) -> None:
+    import argparse
+    import sys
+
+    from . import http_transport
+
+    parser = argparse.ArgumentParser(prog="declara-mx-mcp", description="Servidor MCP declara-mx")
+    http_transport.add_arguments(parser)
+    args = parser.parse_args(argv)
+    if not args.http:
+        mcp.run()
+        return
+    try:
+        http_transport.serve(mcp, args.listen, args.allow_host, TOKEN_ENV)
+    except http_transport.HttpConfigError as error:
+        sys.exit(f"declara-mx-mcp: {error}")
 
 
 if __name__ == "__main__":

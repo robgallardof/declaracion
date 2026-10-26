@@ -51,4 +51,6 @@ de la e.firma.
 - Pruebas: `cd mcp/declara-mx && uv run pytest` (incluye una prueba que rechaza RFC/CURP personales en archivos versionados).
 - Tras editar `.agents/` o `config/`: `python scripts/sync.py`. Instalar para tu usuario en todos los clientes:
   `python scripts/install-mcp.py --with-skills`.
+- Docker (opcional): `Dockerfile` + `compose.yaml` (stdio o HTTP con `DECLARA_MCP_TOKEN`); la imagen nunca lleva
+  datos personales (`.dockerignore` en lista blanca). Prueba real: `python scripts/test_docker.py`.
 - Commits: `git config core.hooksPath .githooks` (el hook quita coautores de IA).
