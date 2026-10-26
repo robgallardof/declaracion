@@ -132,6 +132,12 @@ Sin Docker, el mismo modo: `uv run declara-mx-mcp --http --listen 127.0.0.1:8765
 se rechazan navegadores (cabecera `Origin`) y hosts desconocidos. Es un servicio de un solo usuario: no lo publiques
 en internet sin un proxy con TLS (`--allow-host tu.dominio` para aceptar ese nombre).
 
+**Verificación de Docker — 2026-10-26:** imagen Linux construida en Docker Desktop,
+sin datos personales incluidos; stdio y HTTP autenticado aprobados en una carpeta
+temporal, con puerto personalizado y las 13 herramientas disponibles. Suite nativa:
+`uv run pytest -q`, 27 pruebas aprobadas. No se usaron credenciales ni se presentó
+ninguna declaración. Integración con el portal real: **NOT EXECUTED** en esta prueba.
+
 <a id="️-herramientas-mcp"></a>
 <p align="center"><img src="assets/readme/sections/es-05.svg" alt="05 · Herramientas MCP" width="100%" /></p>
 
