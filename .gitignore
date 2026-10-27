@@ -31,3 +31,6 @@ __pycache__/
 .pytest_cache/
 *.pyc
 *.bak
+
+# Public README line icons
+!/assets/readme-builder/
