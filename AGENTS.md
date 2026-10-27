@@ -54,3 +54,10 @@ de la e.firma.
 - Docker (opcional): `Dockerfile` + `compose.yaml` (stdio o HTTP con `DECLARA_MCP_TOKEN`); la imagen nunca lleva
   datos personales (`.dockerignore` en lista blanca). Prueba real: `python scripts/test_docker.py`.
 - Commits: `git config core.hooksPath .githooks` (el hook quita coautores de IA).
+
+## Commit language
+
+All new Git commit subjects and bodies must be written in English, including merge
+and squash messages. Keep the repository's existing message conventions.
+This applies to all contributors and coding agents, and only to new commits.
+Do not rewrite existing history to translate commit messages.
