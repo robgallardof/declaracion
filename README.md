@@ -18,14 +18,14 @@
 </div>
 
 <p align="center">
-<a href="#-qué-hace"><img src="https://img.shields.io/badge/Qu%C3%A9%20hace-6D28D9?style=for-the-badge" alt="Qué hace" /></a>
-<a href="#-tu-información-es-tuya"><img src="https://img.shields.io/badge/Tu%20informaci%C3%B3n%20es%20tuya-5B21B6?style=for-the-badge" alt="Tu información es tuya" /></a>
-<a href="#-funciona-con-cualquier-agente"><img src="https://img.shields.io/badge/Funciona%20con%20cualquier%20agente-4F46E5?style=for-the-badge" alt="Funciona con cualquier agente" /></a>
-<a href="#-empezar"><img src="https://img.shields.io/badge/Empezar-4338CA?style=for-the-badge" alt="Empezar" /></a>
-<a href="#-herramientas-mcp"><img src="https://img.shields.io/badge/Herramientas%20MCP-2563EB?style=for-the-badge" alt="Herramientas MCP" /></a>
-<a href="#-roles-y-skills"><img src="https://img.shields.io/badge/Roles%20y%20skills-0284C7?style=for-the-badge" alt="Roles y skills" /></a>
-<a href="#-estructura"><img src="https://img.shields.io/badge/Estructura-0EA5E9?style=for-the-badge" alt="Estructura" /></a>
-<a href="#-desarrollo"><img src="https://img.shields.io/badge/Desarrollo-0891B2?style=for-the-badge" alt="Desarrollo" /></a>
+<a href="#-qué-hace"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/readme-builder/kit/btn-que-hace-outline-sm-dark.svg" /><img src="assets/readme-builder/kit/btn-que-hace-outline-sm-light.svg" alt="Qué hace" height="34" /></picture></a>
+<a href="#-tu-información-es-tuya"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/readme-builder/kit/btn-tu-informacion-es-tuya-outline-sm-dark.svg" /><img src="assets/readme-builder/kit/btn-tu-informacion-es-tuya-outline-sm-light.svg" alt="Tu información es tuya" height="34" /></picture></a>
+<a href="#-funciona-con-cualquier-agente"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/readme-builder/kit/btn-funciona-con-cualquier-agente-outline-sm-dark.svg" /><img src="assets/readme-builder/kit/btn-funciona-con-cualquier-agente-outline-sm-light.svg" alt="Funciona con cualquier agente" height="34" /></picture></a>
+<a href="#-empezar"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/readme-builder/kit/btn-empezar-outline-sm-dark.svg" /><img src="assets/readme-builder/kit/btn-empezar-outline-sm-light.svg" alt="Empezar" height="34" /></picture></a>
+<a href="#-herramientas-mcp"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/readme-builder/kit/btn-herramientas-mcp-outline-sm-dark.svg" /><img src="assets/readme-builder/kit/btn-herramientas-mcp-outline-sm-light.svg" alt="Herramientas MCP" height="34" /></picture></a>
+<a href="#-roles-y-skills"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/readme-builder/kit/btn-roles-y-skills-outline-sm-dark.svg" /><img src="assets/readme-builder/kit/btn-roles-y-skills-outline-sm-light.svg" alt="Roles y skills" height="34" /></picture></a>
+<a href="#-estructura"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/readme-builder/kit/btn-estructura-outline-sm-dark.svg" /><img src="assets/readme-builder/kit/btn-estructura-outline-sm-light.svg" alt="Estructura" height="34" /></picture></a>
+<a href="#-desarrollo"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/readme-builder/kit/btn-desarrollo-outline-sm-dark.svg" /><img src="assets/readme-builder/kit/btn-desarrollo-outline-sm-light.svg" alt="Desarrollo" height="34" /></picture></a>
 </p>
 
 > **Proyecto independiente.** No está afiliado, avalado ni relacionado con ninguna autoridad fiscal ni dependencia de
@@ -45,6 +45,8 @@
 | <img src="assets/readme-builder/icons/spark.svg" width="20" height="20" alt="" /> **Facturación** | Arma el CFDI de ingreso, lo revisa contra las reglas 4.0 y lo guarda con nombre claro. |
 | <img src="assets/readme-builder/icons/spark.svg" width="20" height="20" alt="" /> **Anual** | Junta el año (sueldos + RESICO, deducciones personales, retenciones) para la declaración de abril. |
 
+<p align="center"><img src="assets/readme-builder/kit/wave.svg" alt="" width="100%" /></p>
+
 <a id="-tu-información-es-tuya"></a>
 ## <img src="assets/readme-builder/icons/layers.svg" width="24" height="24" alt="" /> Tu información es tuya
 
@@ -53,6 +55,8 @@
   nunca se suben.
 - Una prueba automática **rechaza cualquier RFC o CURP personal** en archivos versionados.
 - El agente **nunca** lee ni guarda la contraseña de tu e.firma. El inicio de sesión y la firma los haces tú.
+
+<p align="center"><img src="assets/readme-builder/kit/wave.svg" alt="" width="100%" /></p>
 
 <a id="-empezar"></a>
 ## <img src="assets/readme-builder/icons/layers.svg" width="24" height="24" alt="" /> Empezar
@@ -148,6 +152,8 @@ temporal, con puerto personalizado y las 13 herramientas disponibles. Suite nati
 `uv run pytest -q`, 27 pruebas aprobadas. No se usaron credenciales ni se presentó
 ninguna declaración. Integración con el portal real: **NOT EXECUTED** en esta prueba.
 
+<p align="center"><img src="assets/readme-builder/kit/wave.svg" alt="" width="100%" /></p>
+
 <a id="-funciona-con-cualquier-agente"></a>
 ## <img src="assets/readme-builder/icons/bot.svg" width="24" height="24" alt="" /> Funciona con cualquier agente
 
@@ -160,6 +166,8 @@ Es un **servidor MCP** estándar (`declara-mx`). Además de las herramientas, pu
 | Codex | `.codex/config.toml` / `~/.codex/config.toml` |
 | Antigravity | `.agents/mcp_config.json` / `~/.gemini/antigravity/mcp_config.json` |
 | Cursor · VS Code · Gemini CLI · Windsurf · Claude Desktop | configs generadas o el instalador |
+
+<p align="center"><img src="assets/readme-builder/kit/wave.svg" alt="" width="100%" /></p>
 
 <a id="-roles-y-skills"></a>
 ## <img src="assets/readme-builder/icons/layers.svg" width="24" height="24" alt="" /> Roles y skills
@@ -176,6 +184,8 @@ CFDI 4.0) · `portal-fiscal` (manual del portal con e.firma).
 3. Antes de enviar una declaración o sellar una factura, te muestra el resumen y espera tu **OK**.
 4. No inventa montos ni hace cuentas a mano.
 5. Siempre te entrega la línea de captura (número, importe y vigencia). El pago lo haces tú.
+
+<p align="center"><img src="assets/readme-builder/kit/wave.svg" alt="" width="100%" /></p>
 
 <a id="-herramientas-mcp"></a>
 ## <img src="assets/readme-builder/icons/bot.svg" width="24" height="24" alt="" /> Herramientas MCP
@@ -195,6 +205,8 @@ CFDI 4.0) · `portal-fiscal` (manual del portal con e.firma).
 
 Sin agente: `cd mcp/declara-mx && uv run declara --help` (por ejemplo `uv run declara estado 2026`).
 
+<p align="center"><img src="assets/readme-builder/kit/wave.svg" alt="" width="100%" /></p>
+
 <a id="-estructura"></a>
 ## <img src="assets/readme-builder/icons/layers.svg" width="24" height="24" alt="" /> Estructura
 
@@ -210,6 +222,8 @@ mcp/declara-mx/            el servidor MCP + CLI
 scripts/                   bootstrap, sync, install-mcp, test_docker
 Dockerfile, compose.yaml   imagen opcional (stdio o HTTP con token)
 ```
+
+<p align="center"><img src="assets/readme-builder/kit/wave.svg" alt="" width="100%" /></p>
 
 <a id="-desarrollo"></a>
 ## <img src="assets/readme-builder/icons/code.svg" width="24" height="24" alt="" /> Desarrollo
@@ -228,7 +242,7 @@ Detalles para agentes en [`AGENTS.md`](AGENTS.md).
 
 <br/>
 
-<p align="center"><a href="#top">Volver al inicio</a></p>
+<p align="center"><a href="#top"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/readme-builder/kit/btn-volver-al-inicio-outline-sm-dark.svg" /><img src="assets/readme-builder/kit/btn-volver-al-inicio-outline-sm-light.svg" alt="Volver al inicio" height="34" /></picture></a></p>
 
 <!-- readme-builder:signature:start -->
 <p align="center"><a href="https://github.com/robgallardof"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/readme/brand/signature-es-dark.svg" /><img src="assets/readme/brand/signature-es-light.svg" alt="Declara MX / Roberto Gallardo" width="100%" /></picture></a></p>
