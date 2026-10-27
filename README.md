@@ -28,13 +28,11 @@
 <a href="#-desarrollo"><img src="https://img.shields.io/badge/Desarrollo-0891B2?style=for-the-badge" alt="Desarrollo" /></a>
 </p>
 
-<p align="center"><img src="assets/readme/divider.svg" alt="" width="80%" /></p>
-
 > **Proyecto independiente.** No está afiliado, avalado ni relacionado con ninguna autoridad fiscal ni dependencia de
 > gobierno. Informa y calcula; **no es asesoría fiscal**. Las decisiones y el envío final son siempre tuyos.
 
 <a id="-qué-hace"></a>
-<h2 align="center"><img src="assets/readme/sections/es-01.svg" alt="01 · Qué hace" width="100%" /></h2>
+## <img src="assets/readme-builder/icons/layers.svg" width="24" height="24" alt="" /> Qué hace
 
 | | |
 |---|---|
@@ -48,7 +46,7 @@
 | <img src="assets/readme-builder/icons/spark.svg" width="20" height="20" alt="" /> **Anual** | Junta el año (sueldos + RESICO, deducciones personales, retenciones) para la declaración de abril. |
 
 <a id="-tu-información-es-tuya"></a>
-<h2 align="center"><img src="assets/readme/sections/es-02.svg" alt="02 · Tu información es tuya" width="100%" /></h2>
+## <img src="assets/readme-builder/icons/layers.svg" width="24" height="24" alt="" /> Tu información es tuya
 
 - Tus datos (RFC, CURP, e.firma, comprobantes, acuses, montos) viven **solo en tu computadora**.
 - El repositorio usa un `.gitignore` de **lista blanca**: los años, `clientes.json` y `config/contribuyente.yaml`
@@ -57,7 +55,7 @@
 - El agente **nunca** lee ni guarda la contraseña de tu e.firma. El inicio de sesión y la firma los haces tú.
 
 <a id="-empezar"></a>
-<h2 align="center"><img src="assets/readme/sections/es-04.svg" alt="03 · Empezar" width="100%" /></h2>
+## <img src="assets/readme-builder/icons/layers.svg" width="24" height="24" alt="" /> Empezar
 
 Requisitos: [uv](https://docs.astral.sh/uv/) y Python 3.12 (uv lo instala).
 
@@ -151,7 +149,7 @@ temporal, con puerto personalizado y las 13 herramientas disponibles. Suite nati
 ninguna declaración. Integración con el portal real: **NOT EXECUTED** en esta prueba.
 
 <a id="-funciona-con-cualquier-agente"></a>
-<h2 align="center"><img src="assets/readme/sections/es-03.svg" alt="04 · Funciona con cualquier agente" width="100%" /></h2>
+## <img src="assets/readme-builder/icons/bot.svg" width="24" height="24" alt="" /> Funciona con cualquier agente
 
 Es un **servidor MCP** estándar (`declara-mx`). Además de las herramientas, publica cada skill como recurso MCP
 (`skill://…`) y cada rol como prompt, así cualquier cliente recibe el manual completo.
@@ -164,7 +162,7 @@ Es un **servidor MCP** estándar (`declara-mx`). Además de las herramientas, pu
 | Cursor · VS Code · Gemini CLI · Windsurf · Claude Desktop | configs generadas o el instalador |
 
 <a id="-roles-y-skills"></a>
-<h2 align="center"><img src="assets/readme/sections/es-06.svg" alt="05 · Roles y skills" width="100%" /></h2>
+## <img src="assets/readme-builder/icons/layers.svg" width="24" height="24" alt="" /> Roles y skills
 
 **Roles:** `extractor-comprobantes` → `validador-cfdi` → `contador-mx` → `auditor-fiscal` para cada mes;
 `preparador-anual` en abril; `investigador-fiscal` mantiene los valores oficiales al día (DOF, INEGI, Banxico).
@@ -180,7 +178,7 @@ CFDI 4.0) · `portal-fiscal` (manual del portal con e.firma).
 5. Siempre te entrega la línea de captura (número, importe y vigencia). El pago lo haces tú.
 
 <a id="-herramientas-mcp"></a>
-<h2 align="center"><img src="assets/readme/sections/es-05.svg" alt="06 · Herramientas MCP" width="100%" /></h2>
+## <img src="assets/readme-builder/icons/bot.svg" width="24" height="24" alt="" /> Herramientas MCP
 
 | Herramienta | Qué hace |
 |---|---|
@@ -198,7 +196,7 @@ CFDI 4.0) · `portal-fiscal` (manual del portal con e.firma).
 Sin agente: `cd mcp/declara-mx && uv run declara --help` (por ejemplo `uv run declara estado 2026`).
 
 <a id="-estructura"></a>
-<h2 align="center"><img src="assets/readme/sections/es-07.svg" alt="07 · Estructura" width="100%" /></h2>
+## <img src="assets/readme-builder/icons/layers.svg" width="24" height="24" alt="" /> Estructura
 
 ```
 2026/                      ← privado
@@ -214,7 +212,7 @@ Dockerfile, compose.yaml   imagen opcional (stdio o HTTP con token)
 ```
 
 <a id="-desarrollo"></a>
-<h2 align="center"><img src="assets/readme/sections/es-08.svg" alt="08 · Desarrollo" width="100%" /></h2>
+## <img src="assets/readme-builder/icons/code.svg" width="24" height="24" alt="" /> Desarrollo
 
 ```bash
 cd mcp/declara-mx && uv run pytest      # 27 pruebas: privacidad, cálculos y MCP por HTTP real
@@ -233,5 +231,5 @@ Detalles para agentes en [`AGENTS.md`](AGENTS.md).
 <p align="center"><a href="#top">Volver al inicio</a></p>
 
 <!-- readme-builder:signature:start -->
-<p align="center"><a href="https://github.com/robgallardof"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/readme/brand/signature-es-dark.svg" /><img src="assets/readme/brand/signature-es-light.svg" alt="Declara MX / Roberto Gallardo" width="100%" /></picture></a></p>
+<p align="center"><a href="https://github.com/robgallardof"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/readme/brand/signature-es-dark.svg" /><img src="assets/readme/brand/signature-es-light.svg" alt="Declara MX / Roberto Gallardo" width="360" /></picture></a></p>
 <!-- readme-builder:signature:end -->
