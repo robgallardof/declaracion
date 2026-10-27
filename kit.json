@@ -1,0 +1,30 @@
+{
+  "version": 1,
+  "theme": "aurora",
+  "assets": "assets/readme-builder/kit",
+  "documents": {"README.md": "es"},
+  "blocks": [
+    {"id": "que-hace", "type": "bento", "columns": 3, "cells": [
+      {"span": 2, "icon": "file", "kicker": "Orden", "title": "Un orden que no falla",
+       "text": "Una carpeta por mes con comprobantes, facturas y acuse. Si hay acuse, el mes ya está hecho."},
+      {"icon": "search", "kicker": "Lectura", "title": "Lee tus papeles",
+       "text": "CFDI 4.0, SPEI, PDF e imágenes, clasificados y sin duplicados."},
+      {"icon": "check", "kicker": "Cálculo", "title": "Cálculos exactos",
+       "text": "ISR RESICO, IVA a favor, recargos. Solo con valores oficiales con fuente."},
+      {"icon": "clock", "kicker": "Plazos", "title": "Fechas límite",
+       "text": "Tu vencimiento según tu RFC y días inhábiles; avisa si se pasó."},
+      {"icon": "database", "kicker": "Historial", "title": "Tu historial al día",
+       "text": "Lee tus acuses y arma la tabla de lo presentado y sus vigencias."},
+      {"icon": "globe", "kicker": "Portal", "title": "Te acompaña en el portal",
+       "text": "Tú entras y firmas; el agente llena y te pide OK antes de enviar."},
+      {"icon": "file", "kicker": "CFDI", "title": "Facturación",
+       "text": "Arma el CFDI de ingreso y lo revisa contra las reglas 4.0."},
+      {"icon": "chart", "kicker": "Abril", "title": "Anual",
+       "text": "Junta sueldos, RESICO, deducciones y retenciones del año."}
+    ]},
+    {"id": "agent-links", "type": "buttons", "items": [
+      {"label": "Instalación, retirada y versiones probadas", "href": "scripts/CLIENTS.md", "icon": "check", "variant": "primary", "trailing": true},
+      {"label": "Reglas para agentes", "href": "AGENTS.md", "icon": "bot", "small": true}
+    ]}
+  ]
+}

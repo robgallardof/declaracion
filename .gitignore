@@ -13,6 +13,7 @@
 !/CLAUDE.md
 !/GEMINI.md
 !/README.md
+!/kit.json
 !/Dockerfile
 !/.dockerignore
 !/compose.yaml

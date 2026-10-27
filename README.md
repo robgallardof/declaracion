@@ -34,16 +34,11 @@
 <a id="-qué-hace"></a>
 ## <img src="assets/readme-builder/icons/layers.svg" width="24" height="24" alt="" /> Qué hace
 
-| | |
-|---|---|
-| <img src="assets/readme-builder/icons/spark.svg" width="20" height="20" alt="" /> **Un orden que no falla** | Una carpeta por mes (`2026/03-marzo/`) con `comprobantes/`, `facturas/` y `acuse/`. Si hay acuse, el mes ya está hecho. |
-| <img src="assets/readme-builder/icons/spark.svg" width="20" height="20" alt="" /> **Lee tus papeles** | CFDI 4.0 (XML) clasificados en ingresos y gastos, transferencias SPEI, PDFs e imágenes. Detecta duplicados. |
-| <img src="assets/readme-builder/icons/spark.svg" width="20" height="20" alt="" /> **Cálculos exactos** | ISR mensual RESICO, IVA con saldo a favor por mes de origen, desglose de IVA incluido, actualización y recargos. Nunca "de memoria": solo con valores oficiales verificados y con fuente. |
-| <img src="assets/readme-builder/icons/spark.svg" width="20" height="20" alt="" /> **Fechas límite** | Calcula tu vencimiento (día 17 + días extra según tu RFC, días inhábiles) y te avisa si se te pasó. |
-| <img src="assets/readme-builder/icons/spark.svg" width="20" height="20" alt="" /> **Tu historial al día** | Lee tus acuses en PDF y arma la tabla de lo presentado: montos, líneas de captura y vigencias. |
-| <img src="assets/readme-builder/icons/globe.svg" width="20" height="20" alt="" /> **Te acompaña en el portal** | Un manual paso a paso, probado en el portal oficial, con los campos escondidos y los errores conocidos. Tú inicias sesión y firmas; el agente llena y te pide OK antes de enviar. |
-| <img src="assets/readme-builder/icons/spark.svg" width="20" height="20" alt="" /> **Facturación** | Arma el CFDI de ingreso, lo revisa contra las reglas 4.0 y lo guarda con nombre claro. |
-| <img src="assets/readme-builder/icons/spark.svg" width="20" height="20" alt="" /> **Anual** | Junta el año (sueldos + RESICO, deducciones personales, retenciones) para la declaración de abril. |
+<!-- kit:que-hace -->
+<p align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/readme-builder/kit/que-hace-es-dark.svg" /><img src="assets/readme-builder/kit/que-hace-es-light.svg" alt="Un orden que no falla: Una carpeta por mes con comprobantes, facturas y acuse. Si hay acuse, el mes ya está hecho. · Lee tus papeles: CFDI 4.0, SPEI, PDF e imágenes, clasificados y sin duplicados. · Cálculos exactos: ISR RESICO, IVA a favor, recargos. Solo con valores oficiales con fuente. · Fechas límite: Tu vencimiento según tu RFC y días inhábiles; avisa si se pasó. · Tu historial al día: Lee tus acuses y arma la tabla de lo presentado y sus vigencias. · Te acompaña en el portal: Tú entras y firmas; el agente llena y te pide OK antes de enviar. · Facturación: Arma el CFDI de ingreso y lo revisa contra las reglas 4.0. · Anual: Junta sueldos, RESICO, deducciones y retenciones del año." width="100%" /></picture></p>
+<!-- /kit:que-hace -->
+
+<p align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/readme/diagrams/mes-es-dark.svg" /><img src="assets/readme/diagrams/mes-es-light.svg" alt="Flujo de un mes: dejas tus comprobantes, el agente los lee y clasifica, calcula ISR e IVA, otro rol lo revisa y tú firmas y envías en el portal" width="100%" /></picture></p>
 
 <p align="center"><img src="assets/readme-builder/kit/wave.svg" alt="" width="100%" /></p>
 
@@ -77,29 +72,6 @@ Luego, háblale a tu agente:
 
 > *"¿Qué meses me faltan de 2026?"* · *"Declara septiembre"* · *"Declara agosto en 0"* · *"¿Cuánto IVA lleva este depósito?"* ·
 > *"Ya se venció mi línea de captura de mayo"* · *"Factura a mi cliente lo de octubre"* · *"Prepara mi anual"*
-
-### Conecta tu agente
-
-Elige OpenCode o DeepSeek Harness para trabajar con este servidor desde tu agente. Primero revisa los cambios; después aplica la configuración.
-
-```sh
-python scripts/install-mcp.py --clients opencode --dry-run
-python scripts/install-mcp.py --clients opencode
-opencode mcp list
-```
-
-<details>
-<summary>Usar DeepSeek Harness en su lugar</summary>
-
-```sh
-python scripts/install-mcp.py --clients deepseek --dry-run
-python scripts/install-mcp.py --clients deepseek
-dsh web --patch .dsh/mcp.cordis.yml
-```
-
-</details>
-
-[Configuración, retirada y versiones comprobadas](scripts/CLIENTS.md).
 
 ### Con Docker (opcional)
 
@@ -154,18 +126,44 @@ ninguna declaración. Integración con el portal real: **NOT EXECUTED** en esta 
 
 <p align="center"><img src="assets/readme-builder/kit/wave.svg" alt="" width="100%" /></p>
 
+<a id="-instalación-retirada-y-compatibilidad"></a>
 <a id="-funciona-con-cualquier-agente"></a>
-## <img src="assets/readme-builder/icons/bot.svg" width="24" height="24" alt="" /> Funciona con cualquier agente
+## <img src="assets/readme-builder/icons/bot.svg" width="24" height="24" alt="" /> Instalación, retirada y compatibilidad
 
 Es un **servidor MCP** estándar (`declara-mx`). Además de las herramientas, publica cada skill como recurso MCP
 (`skill://…`) y cada rol como prompt, así cualquier cliente recibe el manual completo.
 
-| Cliente | Cómo se conecta |
-|---|---|
-| Claude Code | `.mcp.json` de la carpeta o, para tu usuario, el instalador (también enlaza skills y agentes en `~/.claude`) |
-| Codex | `.codex/config.toml` / `~/.codex/config.toml` |
-| Antigravity | `.agents/mcp_config.json` / `~/.gemini/antigravity/mcp_config.json` |
-| Cursor · VS Code · Gemini CLI · Windsurf · Claude Desktop | configs generadas o el instalador |
+Un solo instalador lo registra en tus clientes, muestra el cambio antes y lo vuelve a quitar. Respalda cada
+archivo que toca como `.bak` y respeta los demás servidores del archivo. No escribe credenciales.
+
+| Cliente | `--clients` | Archivo que edita | Alcance | Probado |
+|---|---|---|---|---|
+| Claude Code | `claude-code` | `claude mcp --scope user` (+ skills y roles en `~/.claude` con `--with-skills`) | usuario | Pruebas del instalador con archivos temporales |
+| Codex | `codex` | `~/.codex/config.toml` | usuario | Pruebas del instalador con archivos temporales |
+| OpenCode 1.x | `opencode` | `opencode.json` | proyecto | Prueba con el host real 1.19.4 (CI en Linux) |
+| DeepSeek Harness | `deepseek` | `.dsh/mcp.cordis.yml` | proyecto | Prueba con el runtime real 0.2.1-rc.2 (CI en Linux) |
+| Gemini CLI | `gemini-cli` | `~/.gemini/settings.json` | usuario | Pruebas del instalador con archivos temporales |
+| Antigravity | `antigravity` | `~/.gemini/antigravity/mcp_config.json` | usuario | Pruebas del instalador con archivos temporales |
+| Cursor | `cursor` | `~/.cursor/mcp.json` | usuario | Pruebas del instalador con archivos temporales |
+| VS Code | `vscode` | `Code/User/mcp.json` | usuario | Pruebas del instalador con archivos temporales |
+| Windsurf | `windsurf` | `~/.codeium/windsurf/mcp_config.json` | usuario | Pruebas del instalador con archivos temporales |
+| Claude Desktop | `claude-desktop` | `Claude/claude_desktop_config.json` | usuario | Pruebas del instalador con archivos temporales |
+
+```sh
+python scripts/install-mcp.py --list                        # qué clientes tienes
+python scripts/install-mcp.py --dry-run                     # muestra cada cambio, no escribe nada
+python scripts/install-mcp.py --with-skills                 # lo registra para tu usuario en todos, con skills y roles
+python scripts/install-mcp.py --clients opencode,deepseek   # solo algunos clientes
+python scripts/install-mcp.py --remove                      # deshacer (o --clients … --remove)
+dsh web --patch .dsh/mcp.cordis.yml                         # DeepSeek Harness carga el overlay de forma explícita
+```
+
+La inferencia del modelo dentro de cada host necesita su propio login y no forma parte de estas pruebas.
+
+<!-- kit:agent-links -->
+<p align="center"><a href="scripts/CLIENTS.md"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/readme-builder/kit/agent-links-es-01-dark.svg" /><img src="assets/readme-builder/kit/agent-links-es-01-light.svg" alt="Instalación, retirada y versiones probadas" height="44" /></picture></a>&nbsp;
+<a href="AGENTS.md"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/readme-builder/kit/agent-links-es-02-dark.svg" /><img src="assets/readme-builder/kit/agent-links-es-02-light.svg" alt="Reglas para agentes" height="34" /></picture></a></p>
+<!-- /kit:agent-links -->
 
 <p align="center"><img src="assets/readme-builder/kit/wave.svg" alt="" width="100%" /></p>
 
